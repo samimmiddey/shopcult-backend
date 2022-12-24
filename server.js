@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const port = process.env.PORT || 8080;
+
 // Replace if using a different env file or config
 const env = require("dotenv").config({ path: "./.env" });
 
@@ -42,6 +44,6 @@ app.post("/create-payment-intent", async (req, res) => {
    }
 });
 
-app.listen(5000, () =>
-   console.log(`Node server listening at http://localhost:5000`)
+app.listen(port, () =>
+   console.log(`Node server listening at ${port}`)
 );
